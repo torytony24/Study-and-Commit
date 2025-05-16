@@ -30,6 +30,7 @@ def explore_with_slider():
 
     slider.on_changed(update)
     plt.show()
+    
 
 explore_with_slider()
 
