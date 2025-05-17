@@ -6,7 +6,7 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 
-import dataset
+from dataset import *
 
 # 1. Define model
 model = smp.Unet(
@@ -17,7 +17,7 @@ model = smp.Unet(
 )
 
 # 2. Define preprocessing, loss, metrics
-loss = DiceLoss(mode='binary')
+loss = DiceLoss()
 metrics = [IoU(threshold=0.5)]
 
 # 3. Define optimizer
@@ -27,7 +27,7 @@ optimizer = optim.Adam(model.parameters(), lr=0.0001)
 from torch.utils.data import DataLoader
 
 train_loader = DataLoader(train_dataset, batch_size=4, shuffle=True)
-valid_loader = DataLoader(val_dataset, batch_size=4, shuffle=False)
+valid_loader = DataLoader(valid_dataset, batch_size=4, shuffle=False)
 
 # 5. Define training epochs
 train_epoch = TrainEpoch(
