@@ -10,7 +10,7 @@ image_data = image_obj.get_fdata()
 
 print(image_data.shape)
 
-maxval = 290    # including depth
+maxval = 290
 i = np.random.randint(0, maxval)
 
 
@@ -30,7 +30,5 @@ def explore_with_slider():
 
     slider.on_changed(update)
     plt.show()
-    
 
 explore_with_slider()
-
