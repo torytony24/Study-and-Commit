@@ -22,7 +22,7 @@ $$
 
 ## Multiple hypothesis
 
-머신러닝은 데이터셋들을 가지고 함수 $f: X \rightarrow Y$에 근접한 함수 $g$를 찾는 것이다. $g$를 찾기 위해 가설 $h$를 세우고 맞는지 안 맞는지 보고, 조정해가면서 $g$를 찾는다. (train하고 val loss를 계산해서 최종 모델을 결정하는 방법 생각하면 됨)
+머신러닝은 데이터셋들을 가지고 함수 $f: \mathcal{X} \rightarrow \mathcal{Y}$에 근접한 함수 $g$를 찾는 것이다. $g$를 찾기 위해 가설 $h$를 세우고 맞는지 안 맞는지 보고, 조정해가면서 $g$를 찾는다. (train하고 val loss를 계산해서 최종 모델을 결정하는 방법 생각하면 됨)
 
 가설 $h$에 대한 **in-sample error**를 정의하자.
 
@@ -52,7 +52,7 @@ $$
 \mathbb{P}[|E_{in}(h) - E_{out}(h)| > \epsilon]\leq 2e^{-2\epsilon ^2 N}
 $$
 
-머신러닝은 가설 $h$들 중 가장 성능이 좋은 $g$를 찾는 것이라 했다. Hypothesis set $H$에 $M$개의 $h$가 있다고 할 때, $g$에 대한 error를 생각하면 다음과 같이 확장할 수 있다.
+머신러닝은 가설 $h$들 중 가장 성능이 좋은 $g$를 찾는 것이라 했다. Hypothesis set $\mathcal{H}$에 $M$개의 $h$가 있다고 할 때, $g$에 대한 error를 생각하면 다음과 같이 확장할 수 있다.
 
 $$
 \mathbb{P}[|E_{in}(g) - E_{out}(g)| > \epsilon]\leq 2Me^{-2\epsilon ^2 N}
